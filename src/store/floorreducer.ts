@@ -1,13 +1,13 @@
 //FILL HERE 3.1
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export const floorSlice = createSlice({
     name: "floor",
-    initialState: ,
+    initialState: [false,false,false,false,false],
     reducers: {
-        addNewPolicy: (state: number, action: PayloadAction<GenericPayLoad>) => {
-            state += action.payload.amount!;
+        changeAccess: (state: boolean[], action: PayloadAction<number>) => {
+            state[action.payload] =  !state[action.payload];
         },
     },
 });
