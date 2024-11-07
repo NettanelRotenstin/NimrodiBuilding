@@ -10,7 +10,7 @@ export const store = configureStore({
     },
 })
 
-export const { setRole } =
+export const { setRole, changeAccess } =
     { ...roleSlice.actions, ...floorSlice.actions }
 
-export type RootState = ReturnType<typeof store.getState>
+export type RState = ReturnType<typeof store.getState>

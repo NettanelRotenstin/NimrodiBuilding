@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate replace to="/home" />} />
         <Route path='/home' element={<Reception/>} />
-        <Route path='/floor/:index' element={<Floor/>} />
+        <Route path='/floor/:index' element={<PrivateRoute><Floor/></PrivateRoute>} />
         <Route path='/forbidden' element={<Forbidden/>} />
       </Routes>
     </div>
