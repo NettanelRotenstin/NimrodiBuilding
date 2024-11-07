@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import fs from 'fs/promises'
+import  building from '../data/building.json'
 
 interface Floor {
   name: string;
@@ -13,38 +13,30 @@ const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
 
   //FILL HERE LOGIC TO SET THE BUILDING DATA
-    const fetchData = async ():Promise<Floor[]> => {
-      const floorString: string = await fs.readFile(`./data/building.json`, `utf-8`)
-      const finalData:Floor[] = await JSON.parse(floorString)
-      await setBuildingData(finalData)
-      return finalData
-    }
-  fetchData();
+  setBuildingData(building)
 
-const getFloorByIndex = async (floorIndex: number): Promise<Floor | undefined> => {
+ const getFloorByIndex = (floorIndex : number) => {
   //FILL HERE
-  const allData:Floor[] = await fetchData()
   switch (floorIndex) {
     case 1:
-      return allData.find(f => f.name == "First Floor")
+      return building.find((f: { name: string; }) => f.name == "First Floor")
     case 2:
-      return allData.find(f => f.name == "Second Floor")
+      return building.find((f: { name: string; }) => f.name == "Second Floor")
     case 3:
-      return allData.find(f => f.name == "Third Floor")
+      return building.find((f: { name: string; }) => f.name == "Third Floor")
     case 4:
-      return allData.find(f => f.name == "Fourth Floor")
+      return building.find((f: { name: string; }) => f.name == "Fourth Floor")
     case 5:
-      return allData.find(f => f.name == "Fifth Floor")
+      return building.find((f: { name: string; }) => f.name == "Fifth Floor")
 
     default:
       break;
   }
 
 }
-const getListOfActivities = async (): Promise<string[]> => {
+const getListOfActivities = () => {
   //FILL HERE
-  const allData: Floor[] = await fetchData()
-  return allData.map(a => a.activity)
+  return building.map((a: { activity: string; }) => a.activity)
 }
 return {
   buildingData,

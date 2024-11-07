@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { roleSlice } from "./Rolereducer"
+import { roleSlice } from "./rolereducer"
 import { floorSlice } from "./floorreducer"
 
 // FILL HERE 3.3

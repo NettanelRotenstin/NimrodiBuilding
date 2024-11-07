@@ -8,7 +8,7 @@ export const floorSlice = createSlice({
     initialState: [false, false, false, false, false],
     reducers: {
         changeAccess: (state: boolean[], action: PayloadAction<PayLoadGeneric>) => {
-            state[action.payload.num!] = !state[action.payload.num!];
+            state[action.payload.index!+1] = !state[action.payload.index!+1];
         },
     },
 }); 
