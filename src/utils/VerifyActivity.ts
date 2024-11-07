@@ -8,6 +8,11 @@ interface IuseActivityParams {
 
 const useIsVerified = ({ activity, role, activities }: IuseActivityParams) => {
   //FILL HERE 3.7
+  const acv = activities.filter((a: any) => a.activity == activity)
+  if (acv) {
+    return true
+  }
+  return false
 };
 
 export default useIsVerified;

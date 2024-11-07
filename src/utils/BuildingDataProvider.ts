@@ -17,21 +17,7 @@ const useBuildingData = () => {
 
  const getFloorByIndex = (floorIndex : number) => {
   //FILL HERE
-  switch (floorIndex) {
-    case 1:
-      return building.find((f: { name: string; }) => f.name == "First Floor")
-    case 2:
-      return building.find((f: { name: string; }) => f.name == "Second Floor")
-    case 3:
-      return building.find((f: { name: string; }) => f.name == "Third Floor")
-    case 4:
-      return building.find((f: { name: string; }) => f.name == "Fourth Floor")
-    case 5:
-      return building.find((f: { name: string; }) => f.name == "Fifth Floor")
-
-    default:
-      break;
-  }
+   return building[floorIndex]
 
 }
 const getListOfActivities = () => {
