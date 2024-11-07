@@ -8,7 +8,8 @@ export const roleSlice = createSlice({
     name: "role",
     initialState: enumRole.UnknownPersonnel,
     reducers: {
-        setRole:(state:enumRole,action:PayloadAction<PayLoadGeneric>) =>{
+        setRole: (state: enumRole, action: PayloadAction<PayLoadGeneric>) => {
             state = action.payload.role!
         }
-}});
+    }
+});
