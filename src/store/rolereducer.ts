@@ -1,15 +1,14 @@
 //FILL HERE 3.2
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { enumRole } from "../types/IRole";
+import PayLoadGeneric from "../types/PayLoadGeneric";
 
-export const treasureSlice = createSlice({
+export const roleSlice = createSlice({
     name: "role",
-    initialState: ,
+    initialState: enumRole.UnknownPersonnel,
     reducers: {
-        addNewPolicy: (state: number, action: PayloadAction<>) => {
-            state += action.payload.amount!;
-        },
-        setRole:(state:Roles,action:PayLoadAction<PayLoad>) =>{
-            state = action.payload.role
+        setRole:(state:enumRole,action:PayloadAction<PayLoadGeneric>) =>{
+            state = action.payload.role!
         }
-});
+}});
