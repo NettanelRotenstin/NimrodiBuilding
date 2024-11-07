@@ -15,9 +15,9 @@ function App() {
       <RouterProvider router={router} />
       <Routes>
         <Route path='/' element={<Navigate replace to="/home" />} />
-        <Route path='/home' element={<Reception/>} />
-        <Route path='/floor/:index' element={<PrivateRoute><Floor/></PrivateRoute>} />
-        <Route path='/forbidden' element={<Forbidden/>} />
+        <Route path='home' element={<Reception/>} />
+        <Route path='floor/:index' element={<PrivateRoute><Floor/></PrivateRoute>} />
+        <Route path='forbidden' element={<Forbidden/>} />
       </Routes>
     </div>
   );
